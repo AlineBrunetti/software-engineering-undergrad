@@ -1,0 +1,1 @@
+A alta coesão e o baixo acoplamento facilitam o DRY porque eles garantem que a lógica do seu sistema esteja isolada e reutilizável.

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FamiliaGeek</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <link rel="icon" href="./assets/imagens/iconbranco.png">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-transparente">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="assets/imagens/logo3.png" width="150" alt="">
+                </a>
+
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="nav-principal">
+                    <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item" id="link-carrinho" style="display: none;">
+                        <a href="./carrinho.html" class="nav-link">Carrinho</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="./produtos.html" class="nav-link">Produtos</a>
+                    </li>
+
+                    <li class="nav-item divisor">
+                        <a href="" class="nav-link"></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="./entrar.html" class="nav-link" id="link-entrar">Entrar</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" id="link-logout" class="nav-link text-danger" style="display: none;">Sair</a>
+                    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="home" class="d-flex">
+        <div class="container align-self-center">
+            <div class="row">
+                <div class="col-md-12 capa">
+                    <div id="carousel-geek" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="./produtos.html?categoria=funkopop" class="nav-link">
+                                    <h1>Funko Pop</h1>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./produtos.html?categoria=canecas" class="nav-link">
+                                    <h1>Canecas</h1>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="./produtos.html?categoria=camisetas" class="nav-link">
+                                    <h1>Camisetas</h1>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- Controladores -->
+                        <a href="#carousel-geek" class="carousel-control-prev" data-slide="prev">
+                            <i class="fas fa-angle-left fa-3x"></i></a>
+                        <a href="#carousel-geek" class="carousel-control-next" data-slide="next">
+                            <i class="fas fa-angle-right fa-3x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="caixa">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row albuns">
+                        <div class="col-md-6">
+                            <img src="assets/imagens/camisetas.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="assets/imagens/canecas.jpg" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row albuns">
+                        <div class="col-md-6">
+                            <img src="assets/imagens/funkopop.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="assets/imagens/camisetas.jpg" class="img-fluid">
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-6">
+                    <h2>Oque o geek tem?</h2>
+                    <h3>Decoração</h3>
+                    <p>A FamiliaGeek tem diversos tipos de decoração para você e sua familia geek! Temos nossos principais itens como canecas, camisetas, funkopops...MAS tambem temos garrafas, tapetes, almofadas, e tudo mais que imaginar! Tudo 100% pensado no mundo maravilhoso de fantasia cientifica!
+                    </p>
+                    <h3>Úteis</h3>
+                    <p>Não somente geek na decoração, mas na sim na VIDA! Aqui temos todos os utilitarios necessarios para um geek de sangue. Acessórios para PC, play, xbox, quadros, material de escritorio até toalhas de banho. Você é geek e sua casa pode ser também.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="caixa">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <h2>História</h2>
+                    <p>Era uma vez… dois corações nerds que se encontraram no meio de uma galáxia cheia de referências, memes e cafés quentinhos. Ela amava Pokémon e usava camisetas do Totoro como pijama. Ele colecionava action figures e sabia todas as falas do Gandalf de cor. Entre maratonas de séries, sessões de jogos cooperativos e discussões filosóficas sobre quem venceria numa batalha entre o Darth Vader e o Saitama, algo mágico aconteceu: eles se apaixonaram.</p>
+                    <p> Não demorou para perceberem que compartilhavam mais do que o amor por quadrinhos, animes e RPG de mesa. Compartilhavam sonhos. Um deles? Criar um cantinho especial onde outros nerds, geeks, otakus, gamers e apaixonados por cultura pop pudessem se sentir em casa.</p>
+                    <p>Foi assim que nasceu nossa loja geek — um projeto feito com amor, pixels e muita criatividade. Cada item foi escolhido como quem seleciona pokémons para a batalha final: com cuidado, carinho e um toque de estratégia nerd. Aqui, cada produto carrega um pedacinho do nosso universo, e queremos que você se sinta parte dele também.</p>
+                    <p>Seja bem-vindo(a), herói ou heroína, mago(a) ou guerreiro(a), tripulante da nave ou mestre do calabouço. Esta loja é para você. 💫</p>
+                </div>
+                <div class="col-md-7">
+                    <img src="assets/imagens/img44.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-2">
+                    <img src="assets/imagens/logo3.png" width="142">
+                </div>
+                <div class="col-md-2">
+                    <h4>Company</h4>
+                    <ul class="navbar-nav">
+                        <li><a href="#recursos">Sobre</a></li>
+                        <li><a href="./produtos.html">Novidades</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h4>Links úteis</h4>
+                    <ul class="navbar-nav">
+                        <li><a href="./produtos.html">Presentes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <a href=""><img src="assets/imagens/facebook.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="assets/imagens/twitter.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="assets/imagens/instagram.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/script.js" defer></script>
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

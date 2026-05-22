@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FamiliaGeek</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./assets/css/estilo.css">
+  <link rel="icon" href="./assets/imagens/iconbranco.png">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      padding-top: 120px;
+    }
+
+    main {
+      flex: 1;
+      padding-bottom: 80px;
+    }
+
+    .search-box {
+      margin-top: 30px;
+    }
+
+    .category-card {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .category-card:hover {
+      background-color: #e9ecef;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-icon {
+      font-size: 40px;
+      color: #a11db9;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+
+    footer h4 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer ul li {
+      margin-bottom: 10px;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    footer .col-md-4 ul {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  </style>
+</head>
+<div id="notificacao" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00000055;
+  display: none;
+  z-index: 9999;
+">
+  Produto adicionado ao carrinho!
+</div>
+
+<body>
+
+ <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-transparente">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="assets/imagens/logo3.png" width="150" alt="">
+                </a>
+
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="nav-principal">
+                    <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item" id="link-carrinho" style="display: none;">
+                        <a href="./carrinho.html" class="nav-link">Carrinho</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="./produtos.html" class="nav-link">Produtos</a>
+                    </li>
+
+                    <li class="nav-item divisor">
+                        <a href="" class="nav-link"></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="./entrar.html" class="nav-link" id="link-entrar">Entrar</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" id="link-logout" class="nav-link text-danger" style="display: none;">Sair</a>
+                    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+         <!-- Filtros -->
+        <section class="container">
+            <div class="row mb-4">
+            <div class="col-md-6">
+                <label for="filtroCategoria" style="color: #ffffff;">Filtrar por Categoria:</label>
+                <select id="filtroCategoria" class="form-control">
+                <option value="todos">Todos</option>
+                <option value="funkopop">Funko Pop</option>
+                <option value="camisetas">Camisetas</option>
+                <option value="canecas">Canecas</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="filtroPreco" style="color: #ffffff;">Ordenar por Preço:</label>
+                <select id="filtroPreco" class="form-control">
+                <option value="asc">Menor para Maior</option>
+                <option value="desc">Maior para Menor</option>
+                </select>
+            </div>
+            </div>
+        </section>
+
+        <!-- Lista de Produtos -->
+        <section class="container">
+            <div id="lista-produtos" class="row">
+
+                <!-- Funko Pop -->
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="199.99">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko1.jpg" class="card-img-top" alt="Funko Pop - Dorothy e Toto">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Dorothy e Toto</h5>
+                            <p class="card-text"><strong>R$ 199,99</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Dorothy e Toto" data-preco="199.99">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="349.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko2.jpg" class="card-img-top" alt="Funko Pop - Harry Potter">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Harry Potter</h5>
+                            <p class="card-text"><strong>R$ 349,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Harry Potter" data-preco="349.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="149.99">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko3.jpg" class="card-img-top" alt="Funko Pop - Squirtle">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Squirtle</h5>
+                            <p class="card-text"><strong>R$ 149,99</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Squirtle" data-preco="149.99">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="199.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko4.jpg" class="card-img-top" alt="Funko Pop - Boruto">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Boruto</h5>
+                            <p class="card-text"><strong>R$ 199,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Boruto" data-preco="199.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="134,00">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko5.jpg" class="card-img-top" alt="Funko Pop - Sleepover Deadpool">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Sleepover Deadpool</h5>
+                            <p class="card-text"><strong>R$ 134,00</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Sleepover Deadpool" data-preco="134,00">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="299.99">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko6.jpg" class="card-img-top" alt="Funko Pop - Gamer Angel">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Gamer Angel</h5>
+                            <p class="card-text"><strong>R$ 299,99</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Gamer Angel" data-preco="299.99">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="259.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko7.jpg" class="card-img-top" alt="Funko Pop - Severus Snape">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Severus Snape</h5>
+                            <p class="card-text"><strong>R$ 259,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Severus Snape" data-preco="259.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="funkopop" data-preco="139.00">
+                        <div class="card h-100">
+                        <img src="assets/imagens/funko8.jpg" class="card-img-top" alt="Funko Pop - Carl Com Chapeu">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Funko Pop - Carl Com Chapeu</h5>
+                            <p class="card-text"><strong>R$ 139,00</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="funkopop" data-nome="Funko Pop - Carl Com Chapeu" data-preco="139.00">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+
+                <!-- Camiseta -->
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="90.50">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta1.jpg" class="card-img-top" alt="Camiseta Pac-Man">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Pac-Man</h5>
+                            <p class="card-text"><strong>R$ 90,50</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Pac-Man" data-preco="90.50">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="71.91">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta2.jpg" class="card-img-top" alt="Camiseta Mario Bros">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Mario Bros</h5>
+                            <p class="card-text"><strong>R$ 71,91</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Mario Bros" data-preco="71.91">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="69.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta3.jpg" class="card-img-top" alt="Camiseta Nerd">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Nerd</h5>
+                            <p class="card-text"><strong>R$ 69,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Nerd" data-preco="69.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="56.32">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta4.jpg" class="card-img-top" alt="Camiseta Kimetsu No Yaiba Demon Slayer">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Kimetsu No Yaiba Demon Slayer</h5>
+                            <p class="card-text"><strong>R$ 56,32</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Kimetsu No Yaiba Demon Slayer" data-preco="56.32">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="70.82">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta5.jpg" class="card-img-top" alt="Camiseta Boku no hiro Toga Mikito">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Boku no hiro Toga Mikito</h5>
+                            <p class="card-text"><strong>R$ 70,82</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Boku no hiro Toga Mikito" data-preco="70.82">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="50.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta6.jpg" class="card-img-top" alt="Camiseta Otaku">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Otaku</h5>
+                            <p class="card-text"><strong>R$ 50,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Otaku" data-preco="50.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="69.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta7.jpg" class="card-img-top" alt="Camiseta Naruto Shippuden">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Naruto Shippuden</h5>
+                            <p class="card-text"><strong>R$ 69,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Naruto Shippuden" data-preco="69.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="camisetas" data-preco="134.99">
+                        <div class="card h-100">
+                        <img src="assets/imagens/camiseta8.jpg" class="card-img-top" alt="Camiseta Anime">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Camiseta Anime</h5>
+                            <p class="card-text"><strong>R$ 134,99</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="camisetas" data-nome="Camiseta Anime" data-preco="134.99">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                <!-- Caneca -->
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="39.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca1.jpg" class="card-img-top" alt="Caneca Star Wars">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca Star Wars</h5>
+                            <p class="card-text"><strong>R$ 39,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca Star Wars" data-preco="39.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="20.99">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca2.jpg" class="card-img-top" alt="Caneca Gamer">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca Gamer</h5>
+                            <p class="card-text"><strong>R$ 20,99</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca Gamer" data-preco="20.99">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="50.00">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca3.jpg" class="card-img-top" alt="Caneca Baby Yoda">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca Baby Yoda</h5>
+                            <p class="card-text"><strong>R$ 50,00</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca Baby Yoda" data-preco="50.00">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="45.30">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca4.jpg" class="card-img-top" alt="Caneca Rick and Morty">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca Rick and Morty</h5>
+                            <p class="card-text"><strong>R$ 45,30</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca Rick and Morty" data-preco="45.30">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="39.90">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca5.jpg" class="card-img-top" alt="Caneca No Internet">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca No Internet</h5>
+                            <p class="card-text"><strong>R$ 39,90</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca No Internet" data-preco="39.90">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="64.99">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca6.jpg" class="card-img-top" alt="Caneca ? Mario Bros">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca ? Mario Bros</h5>
+                            <p class="card-text"><strong>R$ 64,99</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca ? Mario Bros" data-preco="64.99">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="40.20">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca7.jpg" class="card-img-top" alt="Caneca D20">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca D20</h5>
+                            <p class="card-text"><strong>R$ 40,20</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca D20" data-preco="40.20">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4 produto" data-categoria="canecas" data-preco="69.80">
+                        <div class="card h-100">
+                        <img src="assets/imagens/caneca8.jpg" class="card-img-top" alt="Caneca Coffe Yoda">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caneca Coffe Yoda</h5>
+                            <p class="card-text"><strong>R$ 69,80</strong></p>
+                            <button class="btn btn-verde mt-auto adicionar-carrinho" data-categoria="cancecas" data-nome="Caneca Coffe Yoda" data-preco="69.80">Adicionar ao Carrinho</button>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-2">
+                    <img src="assets/imagens/logo3.png" width="142">
+                </div>
+                <div class="col-md-2">
+                    <h4>Company</h4>
+                    <ul class="navbar-nav">
+                        <li><a href="./index.html#recursos">Sobre</a></li>
+                        <li><a href="./produtos.html">Novidades</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h4>Links úteis</h4>
+                    <ul class="navbar-nav">
+                        <li><a href="./produtos.html">Presentes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <a href=""><img src="assets/imagens/facebook.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="assets/imagens/twitter.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="assets/imagens/instagram.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./assets/js/script.js" defer></script>
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

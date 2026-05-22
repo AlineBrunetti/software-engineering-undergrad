@@ -1,0 +1,20 @@
+.redonda {
+    border-radius: 50%; 
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    border: 2px solid rgb(241, 233, 233);
+  }
+  body{
+    background-color: rgba(109, 104, 173, 0.637);
+    color: rgb(209, 201, 201); font-family: cursive;
+    text-align: center;
+  }
+.borda{
+    border: 2px solid rgb(221, 218, 218); 
+    text-align: left;
+    padding: 15px;
+    margin: 20px;
+    width: 300px;
+    border-radius: 10px;
+}

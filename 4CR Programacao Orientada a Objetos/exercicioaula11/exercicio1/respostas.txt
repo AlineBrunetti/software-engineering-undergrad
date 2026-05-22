@@ -1,0 +1,4 @@
+Há baixa coesão na classe Cliente. Podemos dividir a classe assim: Separando cada responsabilidade para um domínio específico. Como: Classe: Cliente,responsabilidade: representar os dados do cliente (nome, CPF, ID, etc.), métodos: Não deve ter nenhum dos métodos originais. Apenas getters e setters.
+Classe: CadastroCliente,responsabilidade: Lidar com a persistência e operações primárias. Método Original: void cadastrar().
+Classe: CalculadoraDesconto,responsabilidade:Conter toda a lógica financeira e de regras. método Original: void calcularDesconto().
+Classe: EmailService, responsabilidade: Lidar com a comunicação externa (e-mail, SMS, etc.). método Original: void enviarEmailPromocional().

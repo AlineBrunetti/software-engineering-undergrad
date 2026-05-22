@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Compras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Loja Online - Simulador de Compras</h2>
+
+    <p><strong>Saldo disponível:</strong> R$<span id="saldo">200.00</span></p>
+
+    <label for="produto">Escolha um produto:</label>
+    <select id="produto">
+      <option value="50">Camisa - R$50,00</option>
+      <option value="80">Calça - R$80,00</option>
+      <option value="30">Boné - R$30,00</option>
+      <option value="100">Tênis - R$100,00</option>
+      <option value="20">Meias - R$20,00</option>
+    </select>
+    <button onclick="adicionarProduto()">Adicionar ao carrinho</button>
+
+    <h3>Carrinho</h3>
+    <ul id="carrinho"></ul>
+    <p><strong>Total:</strong> R$<span id="total">0.00</span></p>
+
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+    <p id="mensagem"></p>
+  </div>
+
+  <!-- SCRIPT AQUI, no fim do body -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Músicas para todos - Spotify</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./assets/css/estilo.css">
+  <link rel="icon" href="./assets/imagens/favicon.png">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      padding-top: 180px;
+    }
+
+    main {
+      flex: 1;
+      padding-bottom: 80px;
+    }
+
+    .search-box {
+      margin-top: 30px;
+    }
+
+    .category-card {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .category-card:hover {
+      background-color: #e9ecef;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-icon {
+      font-size: 40px;
+      color: #a11db9;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+
+    footer h4 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer ul li {
+      margin-bottom: 10px;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    footer .col-md-4 ul {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-transparente">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <img src="assets/imagens/spotify.svg" width="142" alt="">
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+          <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-principal">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#" class="nav-link">Premium</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Ajuda</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Baixar</a></li>
+            <li class="nav-item divisor"><a href="#" class="nav-link"></a></li>
+            <li class="nav-item"><a href="./inscreverse.html" class="nav-link">Inscrever-se</a></li>
+            <li class="nav-item"><a href="./entrar.html" class="nav-link">Entrar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Busca -->
+    <div class="container search-box">
+      <input type="text" class="form-control form-control-lg" placeholder="Buscar artigos de ajuda...">
+    </div>
+
+    <!-- Categorias -->
+    <div class="container mt-4">
+      <div class="row g-4">
+        <div class="col-md-4 mb-4">
+          <div class="category-card h-100">
+            <div class="category-icon mb-2"><i class="fas fa-user-circle"></i></div>
+            <h5>Gerenciar Conta</h5>
+            <p>Saiba como atualizar, proteger e recuperar sua conta.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="category-card h-100">
+            <div class="category-icon mb-2"><i class="fas fa-credit-card"></i></div>
+            <h5>Pagamentos</h5>
+            <p>Informações sobre cobranças, planos e métodos de pagamento.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="category-card h-100">
+            <div class="category-icon mb-2"><i class="fas fa-mobile-alt"></i></div>
+            <h5>Uso do app</h5>
+            <p>Dicas e tutoriais sobre como usar o Spotify em seus dispositivos.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="category-card h-100">
+            <div class="category-icon mb-2"><i class="fas fa-headphones"></i></div>
+            <h5>Qualidade de som</h5>
+            <p>Entenda como configurar a melhor experiência de áudio.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="category-card h-100">
+            <div class="category-icon mb-2"><i class="fas fa-users"></i></div>
+            <h5>Planos Família e Duo</h5>
+            <p>Gerencie membros e descubra os benefícios dos planos.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="category-card h-100">
+            <div class="category-icon mb-2"><i class="fas fa-exclamation-triangle"></i></div>
+            <h5>Problemas Técnicos</h5>
+            <p>Corrija erros comuns e veja como solucionar travamentos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <img src="assets/imagens/spotify.svg" width="142">
+        </div>
+        <div class="col-md-2">
+          <h4>Company</h4>
+          <ul class="navbar-nav">
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Empregos</a></li>
+            <li><a href="#">Imprensa</a></li>
+            <li><a href="#">Novidades</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>Comunidades</h4>
+          <ul class="navbar-nav">
+            <li><a href="#">Artistas</a></li>
+            <li><a href="#">Devs</a></li>
+            <li><a href="#">Marcas</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>Links úteis</h4>
+          <ul class="navbar-nav">
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Presentes</a></li>
+            <li><a href="#">Player da Web</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <li><a href="#"><img src="assets/imagens/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="assets/imagens/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="assets/imagens/instagram.png" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

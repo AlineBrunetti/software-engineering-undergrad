@@ -1,0 +1,3 @@
+Qual regra de Object Calisthenics mais força você a
+pensar diferente? Por quê?
+Envolve todos os tipos primitivos e Strings em Classes (Value Objects) ela combate a Obsessão Primitiva, obrigando a transformar dados simples em Objetos de Valor. Força o encapsulamento do comportamento e da validação junto com o dado (a essência da POO), centralizando a lógica e tornando o código mais expressivo e seguro.

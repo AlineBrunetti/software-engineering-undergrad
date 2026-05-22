@@ -1,0 +1,1 @@
+O Controller foi programado para interagir com a interface ReportInterface e não com implementações específicas, qualquer nova classe — como a JsonReport — que implemente corretamente essa interface funcionará com o Controller sem que ele precise ser modificado.
