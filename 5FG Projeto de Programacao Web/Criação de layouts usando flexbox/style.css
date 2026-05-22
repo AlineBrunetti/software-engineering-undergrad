@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    outline: 4px solid #0ff; 
+}
+
+img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.fundo-claro { background-color: #f5f5f5; color: #333; }
+.fundo-escuro { background-color: #0d1117; color: #fff; }
+.fundo-muito-escuro { background-color: #000; color: #fff; }
+
+/* ================== LAYOUT 1 ================== */
+.l1-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #f7f5ee;
+}
+.l1-menu { display: flex; align-items: center; gap: 20px; }
+
+.l1-corpo {
+    display: flex;
+    height: calc(100vh - 80px); /* Ocupa o resto da tela abaixo do header */
+}
+.l1-esquerda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f7f5ee;
+}
+.l1-direita { flex: 1; overflow: hidden; }
+
+/* ================== LAYOUT 2 ================== */
+.l2-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+}
+.l2-logo-menu, .l2-acoes { display: flex; align-items: center; gap: 30px; }
+
+.l2-corpo {
+    display: flex;
+    padding: 60px 40px;
+    gap: 60px;
+}
+.l2-texto { flex: 1.5; display: flex; flex-direction: column; justify-content: center; }
+.l2-imagem { flex: 1; height: 500px; }
+.l2-botoes-lado-a-lado { display: flex; gap: 15px; }
+
+/* ================== LAYOUT 3 ================== */
+.l3-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+.l3-logo-menu, .l3-acoes { display: flex; align-items: center; gap: 20px; }
+
+.l3-corpo {
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 80px);
+}
+.l3-centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+}
+.l3-area-form { display: flex; align-items: center; gap: 10px; margin-top: 20px; }
+
+/* ================== LAYOUT 4 ================== */
+.l4-corpo { padding: 40px 80px; }
+.l4-fileira-filmes { display: flex; gap: 15px; margin-bottom: 40px; }
+.l4-card-filme { flex: 1; aspect-ratio: 2 / 3; }
+.l4-fileira-motivos { display: flex; gap: 20px; }
+.l4-card-motivo { flex: 1; padding: 25px; border-radius: 8px; min-height: 150px; }
+
+/* ================== LAYOUT 5 ================== */
+.l5-corpo { max-width: 800px; margin: 40px auto; display: flex; flex-direction: column; gap: 30px; }
+.l5-noticia { display: flex; gap: 25px; padding-bottom: 30px; }
+.l5-foto { width: 280px; height: 180px; flex-shrink: 0; }
+.l5-textos { display: flex; flex-direction: column; justify-content: center; }
+
+/* ================== LAYOUT 6 ================== */
+.l6-cabecalho { padding: 20px 40px; background-color: #fff; display: flex; flex-direction: column; gap: 20px; }
+.l6-topo, .l6-filtros { display: flex; justify-content: space-between; align-items: center; }
+.l6-topo nav, .l6-filtros nav { display: flex; gap: 25px; font-weight: bold; }
+.l6-acoes { display: flex; align-items: center; gap: 20px; }
+
+.l6-corpo { padding: 20px 40px; background-color: #fff; }
+.l6-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.l6-card { display: flex; flex-direction: column; }
+.l6-foto-card { height: 220px; border-radius: 8px; overflow: hidden; }
+.l6-rodape-card { padding: 10px 5px; }
+
+
+.slot-botao-azul { padding: 10px 20px; background-color: #0061fe; color: white; }
+.slot-botao-grande { padding: 15px 25px; background-color: #0061fe; color: white; display: inline-block; margin-top: 20px; }
+.slot-botao-contorno { padding: 10px 20px; border: 1px solid #000; }
+.slot-botao-preto { padding: 10px 20px; background-color: #000; color: #fff; }
+.slot-botao-escuro { padding: 10px 20px; background-color: #333; color: #fff; border-radius: 20px; }
+.slot-input { padding: 15px; width: 300px; background-color: #fff; color: #000; }
+.slot-input-busca { padding: 10px; width: 250px; background-color: #f0f0f0; border-radius: 20px; color: #888; }
+.slot-botao-verde { padding: 15px 20px; background-color: #2ea043; color: white; }
+.slot-botao-vazado { padding: 15px 20px; border: 1px solid #fff; }

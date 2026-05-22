@@ -1,0 +1,21 @@
+Nesta atividade, você deverá recriar a com base nas imagens disponibilizadas a estrutura dos layouts.
+
+
+Sua tarefa é reproduzir apenas a estrutura visual desses layouts, ou seja:
+Não se preocupe com textos reais, imagens ou conteúdo final.
+Utilize textos e imagens genéricos para visualização do layout (utilize imagens do google imagens, ou envie as imagens utilizadas)
+O desenvolvimento deve seguir obrigatoriamente:
+Uso de HTML + CSS
+Utilização de display: flex; para posicionamento e alinhamento dos elementos
+Estrutura com (ex: <header>, <nav>, <main>, <section>, <footer>, etc.) quando necessário.
+Cada elemento do layout deverá estar marcado ou pelo background color ou por uma borda para representar o "slot" (encaixe) que ele ocupará no site. 
+
+Não é necessário:
+Implementar responsividade (não será avaliada nesta atividade)
+Estilizar cores, fontes ou detalhes visuais avançados (foque na estrutura).
+Critérios de Avaliação
+Uso correto de HTML + CSS
+Organização e clareza do código
+Uso adequado do display flex ou grid no caso do Layout 6.
+Fidelidade à estrutura do layout proposto
+Observação: Apesar de não ser necessário replicar integralmente os layouts com cores, textos, imagens e animações. Os elementos que o compõem cada layout devem aparecer no código e devem estar marcados por cor/bordas coloridas e dimensões (altura x largura) aproximadas.

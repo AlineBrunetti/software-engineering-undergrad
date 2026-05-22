@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fff0f5; 
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #d81b60; 
+    color: #ffffff;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background-color: #ffb74d; 
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.titulo h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.titulo p {
+    color: #f8bbd0; 
+    font-size: 14px;
+}
+
+nav {
+    background-color: #f06292; 
+    padding: 15px 40px;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ffb74d; 
+    color: white;
+}
+
+.container-principal {
+    display: flex;
+    gap: 30px;
+    padding: 30px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #f8bbd0;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    color: #c2185b; 
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.linha-divisoria {
+    border: 0;
+    border-top: 2px dashed #f8bbd0;
+    margin: 30px 0;
+}
+
+article {
+    background-color: #fce4ec; 
+    padding: 25px;
+    margin-top: 20px;
+    border-left: 5px solid #ffb74d;
+    border-radius: 4px;
+}
+
+article h3 {
+    color: #d81b60;
+    margin-bottom: 15px;
+}
+
+aside {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #f8bbd0;
+    height: fit-content;
+}
+
+aside h3 {
+    color: #c2185b;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffb74d;
+    padding-bottom: 5px;
+}
+
+aside ul {
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+
+aside li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.interesses p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.nota-ao-professor {
+    background-color: #fff8e1;
+    padding: 15px;
+    margin-top: 30px;
+    border-left: 4px solid #ffb74d;
+    border-radius: 4px;
+}
+
+
+.nota-ao-professor h3 {
+    border-bottom: none;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    font-size: 16px;
+}
+
+.nota-ao-professor p {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+footer {
+    background-color: #d81b60;
+    color: #fce4ec;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 20px;
+}
